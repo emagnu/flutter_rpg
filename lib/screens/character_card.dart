@@ -1,6 +1,7 @@
 //  //   ///
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
+import 'package:flutter_rpg/themes/theme.dart';
 //  Import FILES
 //  //   ///
 
@@ -18,6 +19,13 @@ class CharacterCard extends StatelessWidget {
         child: Row(
           children: <Widget>[
             Text(character),
+            const Expanded(child: SizedBox()),
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.arrow_forward,
+                  color: AppColors.textColor,
+                ))
           ],
         ),
       ),
