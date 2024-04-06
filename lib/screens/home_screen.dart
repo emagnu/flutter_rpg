@@ -2,6 +2,7 @@
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
 //  Import FILES
+import '../shared/styled_button.dart';
 import '../shared/styled_text.dart';
 //  //   ///
 
@@ -31,9 +32,12 @@ class HomeScreen extends StatelessWidget {
               // Text('Character List',style: Theme.of(context).textTheme.titleMedium),
               const StyledHeading('Character List'),
               const StyledTitle('Character List'),
-              FilledButton(
+
+              // FilledButton(
+              StyledButton(
                 onPressed: () {},
-                child: const Text('Create New'),
+                // child: const Text('Create New'),
+                child: const StyledHeading('Create New'),
               ),
             ],
           )),
