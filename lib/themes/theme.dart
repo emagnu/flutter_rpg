@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 //  //   ///
 
 class AppColors {
-  // static Color primaryColor = const Color.fromRGBO(162, 29, 19, 1);
+  static Color primaryColor = const Color.fromRGBO(162, 29, 19, 1);
   static Color primaryAccent = const Color.fromRGBO(120, 14, 14, 1);
   static Color secondaryColor = const Color.fromRGBO(45, 45, 45, 1);
   static Color secondaryAccent = const Color.fromRGBO(35, 35, 35, 1);
@@ -30,6 +30,27 @@ ThemeData primaryTheme = ThemeData(
     foregroundColor: AppColors.textColor,
     surfaceTintColor: Colors.transparent,
     centerTitle: true,
+  ),
+
+  // Text Theme
+  textTheme: TextTheme(
+    bodyMedium: TextStyle(
+      color: AppColors.textColor,
+      fontSize: 16,
+      letterSpacing: 1,
+    ),
+    headlineMedium: TextStyle(
+      color: AppColors.titleColor,
+      fontSize: 16,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 1,
+    ),
+    titleMedium: TextStyle(
+      color: AppColors.titleColor,
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 2,
+    ),
   ),
 
   //

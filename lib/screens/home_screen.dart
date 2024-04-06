@@ -24,6 +24,14 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             children: <Widget>[
               const Text('Character List'),
+              Text(
+                'Character List',
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              Text(
+                'Character List',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
               FilledButton(
                 onPressed: () {},
                 child: const Text('Create New'),
