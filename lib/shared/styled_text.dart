@@ -1,6 +1,7 @@
 //  //   ///
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 //  Import FILES
 //  //   ///
 
@@ -14,7 +15,9 @@ class StyledText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: Theme.of(context).textTheme.bodyMedium,
+      // style: Theme.of(context).textTheme.bodyMedium,
+      style:
+          GoogleFonts.kanit(textStyle: Theme.of(context).textTheme.bodyMedium),
     );
   }
 }
@@ -29,7 +32,9 @@ class StyledHeading extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text.toUpperCase(),
-      style: Theme.of(context).textTheme.headlineMedium,
+      // style: Theme.of(context).textTheme.headlineMedium,
+      style: GoogleFonts.kanit(
+          textStyle: Theme.of(context).textTheme.headlineMedium),
     );
   }
 }
@@ -44,7 +49,9 @@ class StyledTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text.toUpperCase(),
-      style: Theme.of(context).textTheme.titleMedium,
+      // style: Theme.of(context).textTheme.titleMedium,
+      style:
+          GoogleFonts.kanit(textStyle: Theme.of(context).textTheme.titleMedium),
     );
   }
 }
