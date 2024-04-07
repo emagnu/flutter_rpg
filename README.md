@@ -25,3 +25,12 @@ Layout, UI & Theming
 25 - List View (8:01)
 26 - Card Widget (8:42)
 27 - Icon Button (4:33)
+Data Models
+28 - Making a Character Class (7:37)
+29 - Mixins (8:51)
+30 - Getters (9:45)
+31 - Enhanced Enums (11:20)
+32 - Making a Skill Class (9:39)
+33 - Adding Images (4:14)
+34 - Adding Dummy Data (2:57)
+35 - Using the Character Class (7:17)
