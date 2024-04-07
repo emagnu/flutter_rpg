@@ -2,6 +2,7 @@
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
 import 'package:flutter_rpg/themes/theme.dart';
+import 'package:google_fonts/google_fonts.dart';
 //  Import FILES
 import '../../shared/styled_text.dart';
 //  //   ///
@@ -40,7 +41,26 @@ class _CreateScreenState extends State<CreateScreen> {
               child: StyledText('Create a name & slogan for your character.'),
             ),
             const SizedBox(height: 30),
-            // Character creation form
+            // Character creation form - input for name and slogan
+            TextField(
+              style: GoogleFonts.kanit(
+                  textStyle: Theme.of(context).textTheme.bodyMedium),
+              cursorColor: AppColors.textColor,
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.person_2),
+                label: StyledText('Character name'),
+              ),
+            ),
+            const SizedBox(height: 10),
+            TextField(
+              style: GoogleFonts.kanit(
+                  textStyle: Theme.of(context).textTheme.bodyMedium),
+              cursorColor: AppColors.textColor,
+              decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.chat),
+                label: StyledText('Character slogan'),
+              ),
+            ),
             // ...
           ],
         ),
