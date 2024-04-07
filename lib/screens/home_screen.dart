@@ -2,6 +2,7 @@
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
 //  Import FILES
+import '../models/character.dart';
 import '../shared/styled_button.dart';
 import '../shared/styled_text.dart';
 import 'character_card.dart';
@@ -15,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List characters = ['mario', 'luigi', 'peach', 'toad', 'bowser', 'koopa'];
+  // List characters = ['mario', 'luigi', 'peach', 'toad', 'bowser', 'koopa'];
 
   @override
   Widget build(BuildContext context) {
