@@ -15,6 +15,16 @@ class CreateScreen extends StatefulWidget {
 }
 
 class _CreateScreenState extends State<CreateScreen> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _sloganController = TextEditingController();
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _sloganController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,6 +53,7 @@ class _CreateScreenState extends State<CreateScreen> {
             const SizedBox(height: 30),
             // Character creation form - input for name and slogan
             TextField(
+              controller: _nameController,
               style: GoogleFonts.kanit(
                   textStyle: Theme.of(context).textTheme.bodyMedium),
               cursorColor: AppColors.textColor,
@@ -53,6 +64,7 @@ class _CreateScreenState extends State<CreateScreen> {
             ),
             const SizedBox(height: 10),
             TextField(
+              controller: _sloganController,
               style: GoogleFonts.kanit(
                   textStyle: Theme.of(context).textTheme.bodyMedium),
               cursorColor: AppColors.textColor,
