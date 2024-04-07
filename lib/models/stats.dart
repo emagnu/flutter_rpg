@@ -1,11 +1,8 @@
 //  //   ///
 //  Import LIBRARIES
+import 'character.dart';
 //  Import FILES
 //  //   ///
-
-import 'package:flutter/services.dart';
-
-import 'character.dart';
 
 mixin Stats {
   int _points = 10;
@@ -15,7 +12,7 @@ mixin Stats {
   int _skill = 10;
 
   //  getters
-  // int get points => _points;
+  int get points => _points;
   // int get health => _health;
   // int get attack => _attack;
   // int get defense => _defense;
