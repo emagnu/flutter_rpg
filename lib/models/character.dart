@@ -33,6 +33,15 @@ class Character with Stats {
     required this.id,
   });
 
+// Getter
+  bool get isFav => _isFav;
+
+// Setter
+  set isFav(bool value) {
+    _isFav = value;
+  }
+
+// Method
   void tiggleIsFav() {
     _isFav = !_isFav;
   }
