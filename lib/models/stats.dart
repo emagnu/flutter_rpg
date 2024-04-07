@@ -71,5 +71,5 @@ mixin Stats {
 //
 } // mixinn Stats
 
-Character char = Character(name: 'mario', slogan: 'okie okie', id: '1');
+// Character char = Character(name: 'mario', slogan: 'okie okie', id: '1', vocation: null);
 // debugPrint(char.isFav());

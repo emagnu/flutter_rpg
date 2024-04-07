@@ -29,3 +29,10 @@ Character Model (class)
        -> skill (int)
        -> points (int)
 
+
+
+algo wizard
+code junkie
+terminal raider
+ux ninja
+

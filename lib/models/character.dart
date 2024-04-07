@@ -2,6 +2,7 @@
 //  Import LIBRARIES
 //  Import FILES
 import 'stats.dart';
+import 'vocation.dart';
 //  //   ///
 
 // class Character {
@@ -22,12 +23,14 @@ import 'stats.dart';
 // }
 
 class Character with Stats {
+  final Vocation vocation;
   final String name;
   final String slogan;
   final String id;
   bool _isFav = false;
 
   Character({
+    required this.vocation,
     required this.name,
     required this.slogan,
     required this.id,
