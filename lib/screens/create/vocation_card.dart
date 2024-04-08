@@ -12,28 +12,34 @@ class VocationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          children: <Widget>[
-            // vocation image
-            Image.asset('assets/img/vocations/${vocation.image}',
-                width: 80, colorBlendMode: BlendMode.color),
-            const SizedBox(width: 10.0),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  StyledHeading(vocation.title),
-                  StyledText(vocation.description),
-                ],
+    return GestureDetector(
+      onTap: () {
+        debugPrint(vocation.title);
+        // Navigator.pushNamed(context, '/vocation', arguments: vocation);
+      },
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: <Widget>[
+              // vocation image
+              Image.asset('assets/img/vocations/${vocation.image}',
+                  width: 80, colorBlendMode: BlendMode.color),
+              const SizedBox(width: 10.0),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    StyledHeading(vocation.title),
+                    StyledText(vocation.description),
+                  ],
+                ),
               ),
-            ),
-            //
+              //
 
-            //
-          ],
+              //
+            ],
+          ),
         ),
       ),
     );
