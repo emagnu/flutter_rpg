@@ -1,14 +1,19 @@
 //  //   ///
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
-import 'package:flutter_rpg/shared/styled_button.dart';
-import 'package:flutter_rpg/themes/theme.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_rpg/models/character.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:uuid/uuid.dart';
 //  Import FILES
 import '../../models/vocation.dart';
+import '../../shared/styled_button.dart';
 import '../../shared/styled_text.dart';
+import '../../themes/theme.dart';
 import 'vocation_card.dart';
 //  //   ///
+
+var uuid = const Uuid();
 
 class CreateScreen extends StatefulWidget {
   const CreateScreen({super.key});
@@ -40,15 +45,24 @@ class _CreateScreenState extends State<CreateScreen> {
   void handleSubmit() {
     if (_nameController.text.trim().isEmpty) {
       debugPrint('name must not be empty');
+      // Show error dialog
       return;
     }
     if (_sloganController.text.trim().isEmpty) {
       debugPrint('slogan must not be empty');
+      // Show error dialog
       return;
     }
 
     debugPrint(_nameController.text);
     debugPrint(_sloganController.text);
+
+    characters.add(Character(
+      id: uuid.v4(),
+      name: _nameController.text.trim(),
+      slogan: _sloganController.text.trim(),
+      vocation: selectedVocation,
+    ));
   }
 
   @override
@@ -78,6 +92,7 @@ class _CreateScreenState extends State<CreateScreen> {
                 child: StyledText('Create a name & slogan for your character.'),
               ),
               const SizedBox(height: 30),
+
               // Character creation form - input for name and slogan
               TextField(
                 controller: _nameController,
@@ -102,6 +117,7 @@ class _CreateScreenState extends State<CreateScreen> {
               ),
               // ...
               const SizedBox(height: 30),
+
               // Select vocation title
               Center(
                 child: Icon(
@@ -116,6 +132,7 @@ class _CreateScreenState extends State<CreateScreen> {
                 child: StyledText('This determines your available skills.'),
               ),
               const SizedBox(height: 30),
+
               // Output vocation cards
               VocationCard(
                   selected: selectedVocation == Vocation.junkie,
@@ -133,6 +150,22 @@ class _CreateScreenState extends State<CreateScreen> {
                   selected: selectedVocation == Vocation.wizard,
                   onTap: updateVocation,
                   vocation: Vocation.wizard),
+
+              // good luck message
+              Center(
+                child: Icon(
+                  Icons.code,
+                  color: AppColors.primaryColor,
+                ),
+              ),
+              const Center(
+                child: StyledHeading('Good Luck.'),
+              ),
+              const Center(
+                child: StyledText('Enjoy the journey.'),
+              ),
+              const SizedBox(height: 30),
+
               //Character creation form - input for name and slogan
               Center(
                 child: StyledButton(
