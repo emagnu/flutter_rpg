@@ -28,7 +28,15 @@ class _CreateScreenState extends State<CreateScreen> {
     super.dispose();
   }
 
-  // submit habdler
+// handling vocation selection
+  Vocation selectedVocation = Vocation.junkie;
+  void updateVocation(Vocation vocation) {
+    setState(() {
+      selectedVocation = vocation;
+    });
+  }
+
+  // submit handler
   void handleSubmit() {
     if (_nameController.text.trim().isEmpty) {
       debugPrint('name must not be empty');
@@ -109,10 +117,22 @@ class _CreateScreenState extends State<CreateScreen> {
               ),
               const SizedBox(height: 30),
               // Output vocation cards
-              const VocationCard(vocation: Vocation.junkie),
-              const VocationCard(vocation: Vocation.ninja),
-              const VocationCard(vocation: Vocation.raider),
-              const VocationCard(vocation: Vocation.wizard),
+              VocationCard(
+                  selected: selectedVocation == Vocation.junkie,
+                  onTap: updateVocation,
+                  vocation: Vocation.junkie),
+              VocationCard(
+                  selected: selectedVocation == Vocation.ninja,
+                  onTap: updateVocation,
+                  vocation: Vocation.ninja),
+              VocationCard(
+                  selected: selectedVocation == Vocation.raider,
+                  onTap: updateVocation,
+                  vocation: Vocation.raider),
+              VocationCard(
+                  selected: selectedVocation == Vocation.wizard,
+                  onTap: updateVocation,
+                  vocation: Vocation.wizard),
               //Character creation form - input for name and slogan
               Center(
                 child: StyledButton(
