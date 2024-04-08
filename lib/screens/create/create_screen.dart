@@ -5,7 +5,9 @@ import 'package:flutter_rpg/shared/styled_button.dart';
 import 'package:flutter_rpg/themes/theme.dart';
 import 'package:google_fonts/google_fonts.dart';
 //  Import FILES
+import '../../models/vocation.dart';
 import '../../shared/styled_text.dart';
+import 'vocation_card.dart';
 //  //   ///
 
 class CreateScreen extends StatefulWidget {
@@ -91,6 +93,26 @@ class _CreateScreenState extends State<CreateScreen> {
             ),
             // ...
             const SizedBox(height: 30),
+            // Select vocation title
+            Center(
+              child: Icon(
+                Icons.code,
+                color: AppColors.primaryColor,
+              ),
+            ),
+            const Center(
+              child: StyledHeading('Choose a vocation.'),
+            ),
+            const Center(
+              child: StyledText('This determines your available skills.'),
+            ),
+            const SizedBox(height: 30),
+            // Output vocation cards
+            const VocationCard(vocation: Vocation.junkie),
+            const VocationCard(vocation: Vocation.ninja),
+            const VocationCard(vocation: Vocation.raider),
+            const VocationCard(vocation: Vocation.wizard),
+            //Character creation form - input for name and slogan
             Center(
               child: StyledButton(
                 onPressed: handleSubmit, //() {},
