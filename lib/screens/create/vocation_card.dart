@@ -18,7 +18,7 @@ class VocationCard extends StatelessWidget {
         child: Row(
           children: <Widget>[
             // vocation image
-            Image.asset('assets.img/vocations/${vocation.image}',
+            Image.asset('assets/img/vocations/${vocation.image}',
                 width: 80, colorBlendMode: BlendMode.color),
             const SizedBox(width: 10.0),
             Expanded(
