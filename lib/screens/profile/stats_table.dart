@@ -1,7 +1,6 @@
 //  //   ///
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 //  Import FILES
 import '../../models/character.dart';
 import '../../shared/styled_text.dart';
@@ -33,9 +32,8 @@ class _StatsTableState extends State<StatsTable> {
               children: <Widget>[
                 Icon(
                   Icons.star,
-                  color: widget.character.points > 0
-                      ? Colors.yellow
-                      : Colors.black,
+                  color:
+                      widget.character.points > 0 ? Colors.yellow : Colors.grey,
                 ),
                 const SizedBox(width: 20.0),
                 const StyledText('Stat Available Points:'),
@@ -49,6 +47,70 @@ class _StatsTableState extends State<StatsTable> {
           const SizedBox(height: 10.0),
 
           // Stats table
+          Table(
+            // children: const <TableRow>[TableRow()],
+            children: widget.character.statsAsFormattedList.map((stat) {
+              return TableRow(
+                  decoration: BoxDecoration(
+                      color: AppColors.secondaryColor.withOpacity(0.9)),
+                  children: <Widget>[
+                    // Stat title
+                    TableCell(
+                      verticalAlignment: TableCellVerticalAlignment.middle,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: StyledHeading(stat['title']!),
+                      ),
+                    ),
+                    // Stat value
+                    TableCell(
+                      verticalAlignment: TableCellVerticalAlignment.middle,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: StyledText(stat['value']!),
+                      ),
+                    ),
+                    // Icon to increase
+                    TableCell(
+                      verticalAlignment: TableCellVerticalAlignment.middle,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: IconButton(
+                          // icon: const Icon(Icons.add),
+                          icon: Icon(
+                            Icons.arrow_upward,
+                            color: AppColors.textColor,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              widget.character.increaseStat(stat['title']!);
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                    // Icon to decrease
+                    TableCell(
+                      verticalAlignment: TableCellVerticalAlignment.middle,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: IconButton(
+                          // icon: const Icon(Icons.add),
+                          icon: Icon(
+                            Icons.arrow_downward,
+                            color: AppColors.textColor,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              widget.character.decreaseStat(stat['title']!);
+                            });
+                          },
+                        ),
+                      ),
+                    ),
+                  ]);
+            }).toList(),
+          ),
         ],
       ),
     );
