@@ -35,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
                     width: 140.0,
                     height: 140.0,
                   ),
-                  const SizedBox(height: 20.0),
+                  const SizedBox(width: 20.0),
                   Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,8 +49,41 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
 
-            // weapon and ability
-
+            // weapon and ability and slogan
+            const SizedBox(height: 20.0),
+            Center(
+              child: Icon(
+                Icons.code,
+                color: AppColors.primaryColor,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: AppColors.secondaryColor.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(16),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    const StyledHeading('Slogan'),
+                    StyledText(character.slogan),
+                    const SizedBox(height: 10.0),
+                    const StyledHeading('Weapon of Choiche'),
+                    StyledText(character.vocation.weapon),
+                    const SizedBox(height: 10.0),
+                    const StyledHeading('Unique Ability'),
+                    StyledText(character.vocation.ability),
+                    const SizedBox(height: 10.0),
+                    // const StyledHeading('Skills'),
+                    // StyledText(character.skills),
+                  ],
+                ),
+              ),
+            )
             // stats & skills
 
             // save button
