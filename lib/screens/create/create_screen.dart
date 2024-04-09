@@ -46,11 +46,48 @@ class _CreateScreenState extends State<CreateScreen> {
     if (_nameController.text.trim().isEmpty) {
       debugPrint('name must not be empty');
       // Show error dialog
+      showDialog(
+          context: context,
+          builder: (ctx) {
+            return AlertDialog(
+              title: const StyledHeading('Missing Character Name'),
+              content: const StyledText(
+                  'Every good RPG character needs a s great name ...'),
+              actions: <Widget>[
+                StyledButton(
+                    onPressed: () {
+                      Navigator.pop(ctx);
+                    },
+                    child: const StyledHeading('close')),
+              ],
+              actionsAlignment: MainAxisAlignment.center,
+            );
+          });
+      debugPrint('AGAIN... Missing Character Name');
       return;
     }
     if (_sloganController.text.trim().isEmpty) {
       debugPrint('slogan must not be empty');
       // Show error dialog
+      showDialog(
+          context: context,
+          builder: (ctx) {
+            return AlertDialog(
+              title: const StyledHeading('Missing Slogan'),
+              content: const StyledText(
+                  'Remeber to add a catchy phrase for your character ...'),
+              actions: <Widget>[
+                StyledButton(
+                    onPressed: () {
+                      Navigator.pop(ctx);
+                    },
+                    child: const StyledHeading('close')),
+              ],
+              actionsAlignment: MainAxisAlignment.center,
+            );
+          });
+
+      debugPrint('AGAIN... slogan must not be empty');
       return;
     }
 
