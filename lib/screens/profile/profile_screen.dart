@@ -1,11 +1,12 @@
 //  //   ///
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
-import 'package:flutter_rpg/screens/profile/skill_list.dart';
 //  Import FILES
 import '../../models/character.dart';
+import '../../shared/styled_button.dart';
 import '../../shared/styled_text.dart';
 import '../../themes/theme.dart';
+import 'skill_list.dart';
 import 'stats_table.dart';
 //  //   ///
 
@@ -93,8 +94,23 @@ class ProfileScreen extends StatelessWidget {
                   SkillList(character),
                 ],
               ),
-            )
+            ),
             // save button
+            StyledButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: const StyledHeading(
+                        'Character was Successfully saved!'),
+                    showCloseIcon: true,
+                    duration: const Duration(seconds: 2),
+                    backgroundColor: AppColors.secondaryColor,
+                  ),
+                );
+              },
+              child: const StyledHeading('Save Character'),
+            ),
+            const SizedBox(height: 20.0),
           ],
         ),
       ),
