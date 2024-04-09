@@ -73,6 +73,8 @@ class _CreateScreenState extends State<CreateScreen> {
           context: context,
           builder: (ctx) {
             return AlertDialog(
+              backgroundColor: AppColors.secondaryAccent,
+              surfaceTintColor: Colors.transparent,
               title: const StyledHeading('Missing Slogan'),
               content: const StyledText(
                   'Remeber to add a catchy phrase for your character ...'),
