@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../models/character.dart';
 import '../../shared/styled_text.dart';
 import '../../themes/theme.dart';
+import 'stats_table.dart';
 //  //   ///
 
 class ProfileScreen extends StatelessWidget {
@@ -78,14 +79,19 @@ class ProfileScreen extends StatelessWidget {
                     const StyledHeading('Unique Ability'),
                     StyledText(character.vocation.ability),
                     const SizedBox(height: 10.0),
-                    // const StyledHeading('Skills'),
-                    // StyledText(character.skills),
                   ],
                 ),
               ),
-            )
+            ),
             // stats & skills
-
+            Container(
+              alignment: Alignment.center,
+              child: Column(
+                children: <Widget>[
+                  StatsTable(character),
+                ],
+              ),
+            )
             // save button
           ],
         ),
