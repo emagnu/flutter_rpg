@@ -42,9 +42,11 @@ class CharacterCard extends StatelessWidget {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                          const ProfileScreen(), //(character: character),
+                          // const ProfileScreen(), //(character: character),
+                          ProfileScreen(character: character),
                     ),
                   );
+                  debugPrint('Pushed $character');
                 },
                 icon: Icon(
                   Icons.arrow_forward,
