@@ -1,10 +1,11 @@
 //  //   ///
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
-import 'package:flutter_rpg/themes/theme.dart';
 //  Import FILES
 import '../models/character.dart';
 import '../shared/styled_text.dart';
+import '../themes/theme.dart';
+import 'profile/profile_screen.dart';
 //  //   ///
 
 class CharacterCard extends StatelessWidget {
@@ -36,7 +37,15 @@ class CharacterCard extends StatelessWidget {
             ),
             const Expanded(child: SizedBox()),
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          const ProfileScreen(), //(character: character),
+                    ),
+                  );
+                },
                 icon: Icon(
                   Icons.arrow_forward,
                   color: AppColors.textColor,
