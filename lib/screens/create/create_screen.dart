@@ -1,15 +1,15 @@
 //  //   ///
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_rpg/models/character.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:uuid/uuid.dart';
 //  Import FILES
+import '../../models/character.dart';
 import '../../models/vocation.dart';
 import '../../shared/styled_button.dart';
 import '../../shared/styled_text.dart';
 import '../../themes/theme.dart';
+import '../home_screen.dart';
 import 'vocation_card.dart';
 //  //   ///
 
@@ -63,6 +63,11 @@ class _CreateScreenState extends State<CreateScreen> {
       slogan: _sloganController.text.trim(),
       vocation: selectedVocation,
     ));
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (ctx) => const HomeScreen()),
+    );
   }
 
   @override

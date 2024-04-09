@@ -6,6 +6,7 @@ import '../models/character.dart';
 import '../shared/styled_button.dart';
 import '../shared/styled_text.dart';
 import 'character_card.dart';
+import 'create/create_screen.dart';
 //  //   ///
 
 class HomeScreen extends StatefulWidget {
@@ -59,7 +60,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
               // FilledButton(
               StyledButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (ctx) => const CreateScreen()),
+                    // Navigator.of(context).push(MaterialPageRoute(builder: (ctx) => const CreateScreen()),
+                    // Navigator.of(context).pushNamed('/create'),
+                    // Navigator.of(context).pushNamedAndRemoveUntil('/create', (route) => false),
+                  );
+                },
                 // child: const Text('Create New'),
                 child: const StyledHeading('Create New'),
               ),

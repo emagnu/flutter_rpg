@@ -2,8 +2,8 @@
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
 //  Import FILES
-import 'screens/create/create_screen.dart';
-// import 'screens/home_screen.dart';
+// import 'screens/create/create_screen.dart';
+import 'screens/home_screen.dart';
 import 'themes/theme.dart';
 //  //   ///
 
@@ -21,8 +21,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // theme: ThemeData(colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),useMaterial3: true,),
       theme: primaryTheme,
-      // home: const HomeScreen(),
-      home: const CreateScreen(),
+      home: const HomeScreen(),
+      // home: const CreateScreen(),
     );
   }
 }
