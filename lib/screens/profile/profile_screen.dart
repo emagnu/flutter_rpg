@@ -1,6 +1,7 @@
 //  //   ///
 //  Import LIBRARIES
 import 'package:flutter/material.dart';
+import 'package:flutter_rpg/screens/profile/skill_list.dart';
 //  Import FILES
 import '../../models/character.dart';
 import '../../shared/styled_text.dart';
@@ -89,6 +90,7 @@ class ProfileScreen extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   StatsTable(character),
+                  SkillList(character),
                 ],
               ),
             )
